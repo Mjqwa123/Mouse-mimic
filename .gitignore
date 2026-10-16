@@ -1,0 +1,12 @@
+# personal recordings and the model trained on them
+data/
+models/
+
+# build output
+build/
+dist/
+*.spec
+build.log
+*.exe
+
+__pycache__/
