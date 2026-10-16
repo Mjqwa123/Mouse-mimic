@@ -10,14 +10,21 @@ The exe keeps its recordings and model in `%LOCALAPPDATA%\MouseMimic` ("Open fol
 To build the exe yourself, run `build.bat` (needs `pip install pyinstaller`). The exe is written to `dist\MouseMimic.exe` and also copied to your Desktop, wherever Windows keeps it (with or without OneDrive). If that copy can't be made, the build still succeeded; just use the one in `dist\`.
 
 ## Running from source
-`python app.py` opens the same window. The individual scripts below still work on their own.
+You need:
+- **Windows 10 or 11.** Cursor mode and the exe are Windows-only. The rest only uses tkinter, but it's untested on other systems.
+- **Python 3.10 or newer** from [python.org](https://www.python.org/downloads/), tested with 3.12. A brand-new Python release can take a while to get PyTorch support, so 3.12 is the safe pick. In the installer, tick **"Add python.exe to PATH"**. tkinter is included.
 
-## Setup
-Python 3.12 is installed. Open a **new** terminal so `python` is on the PATH, then:
+Then, in a terminal:
 
 ```
+git clone https://github.com/Mjqwa123/Mouse-mimic.git
+cd Mouse-mimic
 pip install numpy torch --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
 ```
+
+That installs the CPU-only build of PyTorch (about 200MB), which is plenty for this model. If `python` or `pip` isn't found right after installing Python, open a new terminal.
+
+`python app.py` opens the same window as the exe. The individual scripts below also work on their own.
 
 ## Use it
 1. **Record:** `python record.py`. Click the red circles as you normally would; each click saves one move. Esc stops. Aim for 300+ moves (about 10 minutes). Running it again adds to the existing data.
