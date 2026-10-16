@@ -3,11 +3,11 @@
 Records how *you* move the mouse, trains a neural network on it, and generates new movements in your style. It can draw them on screen or drive the real cursor.
 
 ## The app (MouseMimic.exe)
-`MouseMimic.exe` is the whole thing in one program; Python is not needed to run it. Build it with `build.bat` (see below), which also copies it to your Desktop. Double-click it and use the four steps in the window: **Record**, **Train**, **Compare**, **Move cursor**. It takes about 10 seconds to start, because it unpacks itself first.
+`MouseMimic.exe` is the whole thing in one program; Python is not needed to run it. Download it from [Releases](https://github.com/Mjqwa123/Mouse-mimic/releases), or build it yourself (see below). Double-click it and use the four steps in the window: **Record**, **Train**, **Compare**, **Move cursor**. It takes about 10 seconds to start, because it unpacks itself first.
 
 The exe keeps its recordings and model in `%LOCALAPPDATA%\MouseMimic` ("Open folder" in the app). That's separate from this project's `data`/`models` folders.
 
-To rebuild the exe after changing the code, run `build.bat`. It needs `pip install pyinstaller`.
+To build the exe yourself, run `build.bat` (needs `pip install pyinstaller`). The exe is written to `dist\MouseMimic.exe` and also copied to your Desktop, wherever Windows keeps it (with or without OneDrive). If that copy can't be made, the build still succeeded; just use the one in `dist\`.
 
 ## Running from source
 `python app.py` opens the same window. The individual scripts below still work on their own.
